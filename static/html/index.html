@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Claim XMR</title>
+        <style>
+             h1{
+                text-align: center;
+                color: #ff6600 ;
+            }
+            #intro{
+                background-color: aliceblue;
+                position: absolute;
+                color: #4c4c4c;
+                font-size:larger;
+                border-radius: 10%;
+                top: 5%;
+                left: 20%;
+                width: 900px;
+            }
+            #element{
+                text-align: center;
+                background-color: lightgrey;
+                color: #4c4c4c;
+                border-radius: 10%;
+            }
+            .button {
+                display: inline-block;
+                border-radius: 4px;
+                background-color: #ff6600;
+                border: none;
+                color: #FFFFFF;
+                text-align: center;
+                font-size: 14px;
+                padding: 10px;
+                width: 100px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+            }
+
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+
+            .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+
+            .button:hover span {
+                padding-right: 25px;
+            }
+
+            .button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+            .content{
+                text-align: center;
+            }
+            .address{
+                width: 30%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app" class="content">
+            <div class="claim" :style="hideclaim">
+                <h1>Claim {{ bolenz }} XMR</h1>
+                <input type="text" value="" class="address" id="address">
+                <input v-on:click="claim" type="submit" value="Claim" class="button">
+            </div>
+
+            <div class="create" :style="hidecreate">
+                <h1>Create claimable link</h1>
+                <input v-on:click="create" type="submit" value="Create" class="button">
+            </div> 
+            <div :style="hideok">
+                <img :style="hideok" src="/img/ok.gif">
+                <p>{{ txid }}</p>
+            </div>
+            <div :style="hidefund">
+                <img :src="qrcode">
+                <p>{{ subadr }}</p>
+                <p>http://127.0.0.1:8080/?subadr={{ subadr }}</p>
+            </div>
+            <div :style="hidenobolenz">
+                <h1>KEINE BOLENZ da! :(</h1>
+            </div>
+            
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="/js/main.js"></script>
+    </body>
+
+</html>
