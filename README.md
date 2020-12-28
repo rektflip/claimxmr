@@ -27,7 +27,7 @@ A custodial service that lets you easily distribute Monero to newbees and others
    pip install cherrypy qrcode requests
    ```
 
-4. In a terminal start the Monero RPC with these flags:
+4. In a terminal start Monero RPC (make sure to adjust flags such as --wallet-file or --stagenet)
 
    ```
    ./monero-wallet-rpc --stagenet --rpc-bind-port 18082 --wallet-file stagenetclaim --prompt-for-password --rpc-login test:test
