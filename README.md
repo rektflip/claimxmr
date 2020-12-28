@@ -22,8 +22,14 @@ A custodial service that lets you easily distribute Monero to newbees and others
    ```
 
 3. Install cherrypy, requests and qrcode
+
    ```
    pip install cherrypy qrcode requests
+   ```
+
+4. Start the claimxmr server (and visit localhost:8080)
+   ```
+   python server.py
    ```
 
 ## ATTENTION
