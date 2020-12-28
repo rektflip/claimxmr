@@ -1,6 +1,11 @@
 # claimxmr
 
-Let people claim Monero via Link.
+A custodial service that lets you easily distribute Monero to newbees and others.
+
+1. Visit the website,
+2. create a new link,
+3. pay Monero to the subaddress,
+4. send the link to the recipient.
 
 ## Installation
 
