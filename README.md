@@ -27,7 +27,13 @@ A custodial service that lets you easily distribute Monero to newbees and others
    pip install cherrypy qrcode requests
    ```
 
-4. Start the claimxmr server (and visit localhost:8080)
+4. In a terminal start Monero RPC (make sure to adjust flags such as --wallet-file or --stagenet)
+
+   ```
+   ./monero-wallet-rpc --stagenet --rpc-bind-port 18082 --wallet-file stagenetclaim --prompt-for-password --rpc-login test:test
+   ```
+
+5. Start the claimxmr server (and visit localhost:8080)
    ```
    python server.py
    ```
