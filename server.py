@@ -29,7 +29,6 @@ def main():
 
     app_o = application.Application_cl(current_dir)
     cherrypy.tree.mount(app_o.claim, '/claim', normalConfig_o)
-    # cherrypy.tree.mount(app_o.projekte, '/projekt', normalConfig_o)
 
     cherrypy.engine.start()
     cherrypy.engine.block()
