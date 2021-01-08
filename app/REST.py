@@ -4,6 +4,7 @@ from app import subcounter
 import cherrypy
 import qrcode
 
+
 @cherrypy.expose
 class REST_cl(object):
     def __init__(self, path):
@@ -11,6 +12,7 @@ class REST_cl(object):
         self.scounter = subcounter.Subcounter_cl(self.path)
         self.wallet = xmrrpc.Wallet_cl()
         self.db = database.Database_cl()
+
     def GET(self, subadr=None, destadr=None):
         if subadr == None and destadr == None:
             subadrindex = self.scounter.incr()
@@ -28,4 +30,4 @@ class REST_cl(object):
         elif subadr != None and destadr != None:
             subadrindex = self.db.getID(subadr)
             tx_id = self.wallet.sweepsub(subadrindex, destadr)
-            return str(tx_id)      
+            return str(tx_id)
