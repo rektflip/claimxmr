@@ -24,7 +24,7 @@ A custodial service that lets you easily distribute Monero to newbees and others
 3. Install cherrypy, requests and qrcode
 
    ```
-   pip install cherrypy qrcode requests
+   pip install cherrypy qrcode requests image
    ```
 
 4. If needed, [download the Monero CLI and RPC](https://www.getmonero.org/downloads/) for your operating system
